@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа</title>
+    <link rel="shortcut icon" type="image/png" href="../images/GasPrime.png"/>
+    <link rel="stylesheet" type="text/css" href="../css/style_for_forms.css"/>
+</head>
+<body class="body_style">
+    <div class="page_struct">
+        <h1 class="sending_title">Оформление заказа</h1>
+        <form name="form" method="POST" action="../php/order.php">
+            <div class="all_fields">
+                <div class="info">
+                    <fieldset class="field_style">
+                        <legend class="field_title">Личная информация</legend>
+                        <div class="field">
+                            <label class="label_style">Имя:</label>
+                            <div class="set"><input type="text" name="name" pattern="[А-Яа-я]{4,15}" value="" placeholder="Ваше имя"  required><label class="star">*</label></div>
+                        </div>
+                        <div class="field">
+                            <label class="label_style">Фамилия: </label>
+                            <div class="set"><input type="text" name="surname" pattern="[А-Яа-я]{2,15}" value="" placeholder="Ваша фамилия" required><label class="star">*</label></div>
+                        </div>
+                        <div class="field">
+                            <label class="label_style">Отчество: </label>
+                            <div class="set"><input type="text" name="patronymic" pattern="[А-Яа-я]{6,15}" value="" placeholder="Ваше отчество"></div>
+                        </div>
+                        <div class="field">
+                            <label class="label_style">В каком городе вы ждёте от нас выполнения заказа?</label>
+                                <div class="set"><select name="city" aria-placeholder="Выберите из списка" required>
+                                    <option value=""></option>
+                                    <option value="Moscow">Москва</option>
+                                    <option value="Saint Petersberg">Санкт-Петербург</option>
+                                    <option value="Kazan">Казань</option>
+                                    <option value="Kransodar">Краснодар</option>
+                                    <option value="Nizniy Novgorod">Нижний Новгород</option>
+                                    <option value="Rostov-na-Dony">Ростов-на-Дону</option>
+                                    <option value="Krasnojarsk">Красноярск</option>
+                                    <option value="Ekaterinburg">Екатеринбург</option>
+                                    <option value="Omsk">Омск</option>
+                                    <option value="Perm">Пермь</option>
+                                    <option value="Ufa">Уфа</option>
+                                    <option value="Novosibirsk">Новосибирск</option>
+                                    <option value="Volgograd">Волгоград</option>
+                                    <option value="Voronezh">Воронеж</option>
+                                    <option value="Samara">Самара</option>
+                                    <option value="Chelyabinsk">Челябинск</option>
+                                    <option value="Saratov">Саратов</option>
+                                </select><label class="star">*</label></div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="info">
+                    <fieldset class="field_style">
+                        <legend class="field_title">Контактная информация</legend>
+                        <div class="field">
+                            <label class="label_style">Введите почтовый индекс: </label>
+                            <div class="set"><input type="text" name="post_index" value="" pattern="[0-9]{6}" placeholder="Индекс"  required><label class="star">*</label></div>
+                        </div>
+                        <div class="field">
+                            <label class="label_style">Ваш номер телефона в формате 8-ххх-ххх-хх-хх:: </label>
+                            <div class="set"><input type="tel" name="phone_number" value="" placeholder="Номер телефона" pattern="[7-8]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" value="" required><label class="star">*</label></div>
+                        </div>
+                        <div class="field">
+                            <label class="label_style">Введите e-mail: </label>
+                            <div class="set"><input type="email" name="email" pattern="[a-zA-Z]{}" value="" placeholder="Email" required><label class="star">*</label></div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="info">
+                    <fieldset class="field_style">
+                        <legend class="field_title">Общая информация</legend>
+                        <div class="question">
+                            <label class="label_style">Как вы узнали о нашей компании?</label>
+                        </div>
+                        <div class="your_source">
+                            <div class="this_source">
+                                <input type="checkbox" name="source1" value="+"><label class="label_style">Увидел(а) в соцсетях/на телевидении</label>
+                            </div>
+                            <div class="this_source">
+                                <input type="checkbox" name="source2" value="+"><label class="label_style">Посоветовали знакомые</label>
+                            </div>
+                            <div class="this_source">
+                                <input type="checkbox" name="source3" value="+"><label class="label_style">Увидел(а) на рекламных баннерах</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="info">
+                    <fieldset class="field_style">
+                        <div class="container"> 
+                            <div class="agreement">
+                                <input type="checkbox" name="agr" required><label class="label_style">Согласен на обработку и хранение персональных данных.</label><label class="star">*</label>
+                            </div>
+                            <div class="buttons">
+                                <input id="clean_but" type="reset" name="clear" value="Очистить" class="clean">
+                                <input id="sub_but" type="submit" name="sub" value="Отправить" class="sub">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>  
+            </div>
+        </form>
+    </div>
+</body>
+</html> 

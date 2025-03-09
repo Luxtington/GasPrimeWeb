@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заполнение резюме</title>
+    <link rel="shortcut icon" type="image/png" href="../images/GasPrime.png"/>
+    <link rel="stylesheet" type="text/css" href="../css/style_for_forms.css"/>
+</head>
+<body class="body_style">
+    <div class="page_struct">
+        <h1 class="sending_title">Заполнение резюме</h1>
+        <form name="form" method="POST" action="../php/resume.php">
+            <div class="all_fields">
+                <div class="info">
+                    <fieldset class="field_style">
+                        <legend class="field_title">Личная информация</legend>
+                        <div class="field">
+                            <label class="label_style">Имя:</label>
+                            <div class="set"><input type="text" name="name" pattern="[А-Яа-я]{4,15}" value="" placeholder="Ваше имя"  required><label class="star">*</label></div>
+                        </div>
+                        <div class="field">
+                            <label class="label_style">Фамилия: </label>
+                            <div class="set"><input type="text" name="surname" pattern="[А-Яа-я]{2,15}" value="" placeholder="Ваша фамилия" required><label class="star">*</label></div>
+                        </div>
+                        <div class="field">
+                            <label class="label_style">Отчество: </label>
+                            <div class="set"><input type="text" name="patronymic" pattern="[А-Яа-я]{6,15}" value="" placeholder="Ваше отчество"></div>
+                        </div>
+                        <div class="field">
+                            <label class="label_style">Ваш возраст:</label>
+                            <div class="set"><input type="number" name="age" min="20" max="70"><label class="star">*</label></div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="info">
+                    <fieldset class="field_style">
+                        <legend class="field_title">Контактная информация</legend>
+                        <div class="field">
+                            <label class="label_style">Почтовый индекс: </label>
+                            <div class="set"><input type="text" name="post_index" value="" pattern="[0-9]{6}" placeholder="Индекс" required><label class="star">*</label></div>
+                        </div>
+                        <div class="field">
+                            <label class="label_style">Ваш номер телефона в формате 8-ххх-ххх-хх-хх: </label>
+                            <div class="set"><input type="tel" name="phone_number" value="" pattern="[7-8]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="Номер телефона" required><label class="star">*</label></div>
+                        </div>
+                        <div class="field">
+                            <label class="label_style">Ваш e-mail: </label>
+                            <div class="set"><input type="email" name="email" value="" pattern="[a-zA-Z0-9]{}" placeholder="Email" required><label class="star">*</label></div>
+                        </div>
+                        <div class="field">
+                            <label class="label_style">Ваш telegram в формате @username: </label>
+                            <div class="set"><input type="telegram" name="tg" value="" pattern="@[a-zA-Z]{}" placeholder="Telegram"></div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="info">
+                    <fieldset class="field_style">
+                        <legend class="field_title">Общая информация</legend>
+                        <div class="field">
+                            <label class="label_style">Ваш опыт работы: </label>
+                                <div class="set"><select name="work_experience" aria-placeholder="Выберите из списка" required>
+                                    <option value=""></option>
+                                    <option value="-">Нет опыта</option>
+                                    <option value="1+ year">Более 1 года</option>
+                                    <option value="3+ years">Более 3 лет</option>
+                                    <option value="5+ years">Более 5 лет</option>
+                                    <option value="10+ years">Более 10 лет</option>
+                                </select><label class="star">*</label></div>
+                        </div>
+                        <div class="field">
+                            <label class="label_style">В каком городе вы хотите у нас работать?</label>
+                                <div class="set"><select name="city" aria-placeholder="Выберите из списка" required>
+                                    <option value=""></option>
+                                    <option value="Moscow">Москва</option>
+                                    <option value="Saint Petersberg">Санкт-Петербург</option>
+                                    <option value="Kazan">Казань</option>
+                                    <option value="Kransodar">Краснодар</option>
+                                    <option value="Nizniy Novgorod">Нижний Новгород</option>
+                                    <option value="Rostov-na-Dony">Ростов-на-Дону</option>
+                                    <option value="Krasnojarsk">Красноярск</option>
+                                    <option value="Ekaterinburg">Екатеринбург</option>
+                                    <option value="Omsk">Омск</option>
+                                    <option value="Perm">Пермь</option>
+                                    <option value="Ufa">Уфа</option>
+                                    <option value="Novosibirsk">Новосибирск</option>
+                                    <option value="Volgograd">Волгоград</option>
+                                    <option value="Voronezh">Воронеж</option>
+                                    <option value="Samara">Самара</option>
+                                    <option value="Chelyabinsk">Челябинск</option>
+                                    <option value="Saratov">Саратов</option>
+                                </select><label class="star">*</label></div>
+                        </div>
+                        <div class="field">
+                            <div class="set">
+                                <label class="label_style"></label>Тип занятости: <label class="star">*</label>
+                            </div>
+                            <div class="set">
+                                <div class="set"><input type="radio" name="post" value="worker" class="worker" required><label>Сотрудник</label></div>
+                                <div class="set"><input type="radio" name="post" value="intern" class="intern" required><label>Стажёр</label></div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label_style">Ваши зарплатные ожидания:</label>
+                            <div class="set">
+                                <input type="number" name="salary" min="20" max="600">
+                                <label class="label_style space">тыс. рублей</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="info">
+                    <fieldset class="field_style">
+                        <div class="container"> 
+                            <div class="agreement">
+                                <input type="checkbox" name="agr" required><label class="label_style">Согласен на обработку и хранение персональных данных.</label><label class="star">*</label>
+                            </div>
+                            <div class="buttons">
+                                <input id="clean_but" type="reset" name="clear" value="Очистить" class="clean">
+                                <input id="sub_but" type="submit" name="sub" value="Отправить" class="sub">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>  
+            </div>
+        </form>
+    </div>
+</body>
+</html>
